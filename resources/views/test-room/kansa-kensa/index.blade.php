@@ -32,137 +32,26 @@
                     <table id="example2" class="table table-bordered table-hover">
                         <thead>
                             <tr>
-                                <th>No</th>
-                                <th>Item</th>
-                                <th>Control Item</th>
-                                <th>Control Point</th>
-                                <th>Rank</th>
-                                <th>Judge/Patrol</th>
-                                <th>Ilustrasi</th>
+                                <th>No</th> <!-- column 1 -->
+                                <th>Nama</th><!-- column 2 -->
+                                <th>No Engine</th> <!-- column 34567 -->
+                                <th>Shift</th> <!-- column 891011 -->
+                                <th>Tanggal</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach ($kankens as $kanken)
                             <tr>
-                                <td>1</td>
-                                <td>Assy Oil Nozzle Jet</td>
-                                <td>Pipe Nozle</td>
-                                <td>Pada tikungan pipa tidak menyempit</td>
-                                <td>B</td>
-                                <td>Radio button ( o )</td>
-                                <td>Gambar</td>
+                                <td>{{$kanken->id}}</td>
+                                <td>{{$kanken->nama}}</td>
+                                <td>{{$kanken->noengine}}</td>
+                                <td>{{$kanken->shift}}</td>
+                                <td>{{$kanken->tanggal}}</td>
+                                <td>Edit / delete button</td>
                             </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Assy Oil Nozzle Jet</td>
-                                <td>Pipe Nozle</td>
-                                <td>Pada tikungan pipa tidak menyempit</td>
-                                <td>B</td>
-                                <td>Radio button ( o )</td>
-                                <td>Gambar</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Assy Oil Nozzle Jet</td>
-                                <td>Pipe Nozle</td>
-                                <td>Pada tikungan pipa tidak menyempit</td>
-                                <td>B</td>
-                                <td>Radio button ( o )</td>
-                                <td>Gambar</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Assy Oil Nozzle Jet</td>
-                                <td>Pipe Nozle</td>
-                                <td>Pada tikungan pipa tidak menyempit</td>
-                                <td>B</td>
-                                <td>Radio button ( o )</td>
-                                <td>Gambar</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Assy Oil Nozzle Jet</td>
-                                <td>Pipe Nozle</td>
-                                <td>Pada tikungan pipa tidak menyempit</td>
-                                <td>B</td>
-                                <td>Radio button ( o )</td>
-                                <td>Gambar</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Assy Oil Nozzle Jet</td>
-                                <td>Pipe Nozle</td>
-                                <td>Pada tikungan pipa tidak menyempit</td>
-                                <td>B</td>
-                                <td>Radio button ( o )</td>
-                                <td>Gambar</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Assy Oil Nozzle Jet</td>
-                                <td>Pipe Nozle</td>
-                                <td>Pada tikungan pipa tidak menyempit</td>
-                                <td>B</td>
-                                <td>Radio button ( o )</td>
-                                <td>Gambar</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Assy Oil Nozzle Jet</td>
-                                <td>Pipe Nozle</td>
-                                <td>Pada tikungan pipa tidak menyempit</td>
-                                <td>B</td>
-                                <td>Radio button ( o )</td>
-                                <td>Gambar</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Assy Oil Nozzle Jet</td>
-                                <td>Pipe Nozle</td>
-                                <td>Pada tikungan pipa tidak menyempit</td>
-                                <td>B</td>
-                                <td>Radio button ( o )</td>
-                                <td>Gambar</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Assy Oil Nozzle Jet</td>
-                                <td>Pipe Nozle</td>
-                                <td>Pada tikungan pipa tidak menyempit</td>
-                                <td>B</td>
-                                <td>Radio button ( o )</td>
-                                <td>Gambar</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Assy Oil Nozzle Jet</td>
-                                <td>Pipe Nozle</td>
-                                <td>Pada tikungan pipa tidak menyempit</td>
-                                <td>B</td>
-                                <td>Radio button ( o )</td>
-                                <td>Gambar</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Assy Oil Nozzle Jet</td>
-                                <td>Pipe Nozle</td>
-                                <td>Pada tikungan pipa tidak menyempit</td>
-                                <td>B</td>
-                                <td>Radio button ( o )</td>
-                                <td>Gambar</td>
-                            </tr>
-
+                            @endforeach
                         </tbody>
-                        <tfoot>
-                            <tr>
-                                <th>No</th>
-                                <th>Item</th>
-                                <th>Control Item</th>
-                                <th>Control Point</th>
-                                <th>Rank</th>
-                                <th>Judge/Patrol</th>
-                                <th>Ilustrasi</th>
-                            </tr>
-                        </tfoot>
                     </table>
                 </div>
                 <!-- /.card-body -->
@@ -204,4 +93,6 @@
         });
     });
 </script>
+
+
 @endpush

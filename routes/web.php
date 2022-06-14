@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\KankenController;
+use App\Models\Kanken;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,9 +27,5 @@ Route::get('/test-room', function () {
     return view('/test-room/index');
 });
 
-Route::get('/test-room/kansa-kensa', function () {
-    return view('/test-room/kansa-kensa/index');
-});
-Route::get('/test-room/kansa-kensa/create', function () {
-    return view('/test-room/kansa-kensa/create');
-});
+Route::get('/test-room/kansa-kensa', [KankenController::class, 'index']);
+Route::get('/test-room/kansa-kensa/create', [KankenController::class, 'create']);

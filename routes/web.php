@@ -27,5 +27,6 @@ Route::get('/test-room', function () {
     return view('/test-room/index');
 });
 
-Route::get('/test-room/kansa-kensa', [KankenController::class, 'index']);
+Route::get('/test-room/kansa-kensa', [KankenController::class, 'index'])->name('kankenindex');
 Route::get('/test-room/kansa-kensa/create', [KankenController::class, 'create']);
+Route::post('/test-room/kansa-kensa/create', [KankenController::class, 'store']);

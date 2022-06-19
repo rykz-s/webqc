@@ -261,13 +261,14 @@ class CreateKankensTable extends Migration
             $table->char('customCheckbox239', 3)->nullable()->default('0');
             $table->char('customCheckbox240', 3)->nullable()->default('0');
             $table->char('customCheckboxTorqueBolt', 3)->nullable()->default('0');
-            $table->char('customCheckboxWash3er', 3)->nullable()->default('0');
+            $table->char('customCheckboxWasher', 3)->nullable()->default('0');
             $table->char('customCheckboxSwitchOil', 3)->nullable()->default('0');
             $table->integer('act1')->nullable();
             $table->integer('act2')->nullable();
             $table->integer('act3')->nullable();
             $table->integer('act4')->nullable();
             $table->integer('act5')->nullable();
+            $table->integer('act6')->nullable();
             $table->integer('act7')->nullable();
             $table->integer('act8')->nullable();
             $table->integer('act9')->nullable();

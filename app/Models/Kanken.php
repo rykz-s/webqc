@@ -9,8 +9,10 @@ class Kanken extends Model
 {
     use HasFactory;
 
-    protected $guarded = [
-        'id',
-        'timestamps'
-    ];
+    // protected $guarded = [
+    //     'id',
+    //     'timestamps'
+    // ];
+
+    protected $table = "kankens";
 }

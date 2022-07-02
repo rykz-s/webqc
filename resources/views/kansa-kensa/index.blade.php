@@ -24,12 +24,12 @@
                 <div class="card-header">
                     <h3 class="card-title">Patrol Check Assembling TR</h3>
                     <div class="float-right">
-                        <a class="btn btn-success" href="/test-room/kansa-kensa/create">Tambah Data Patrol Check</a>
+                        <a class="btn btn-success" href="{{route('kansa-kensa.create')}}">Tambah Data Patrol Check</a>
                     </div>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
-                    <table id="example2" class="table table-bordered table-hover">
+                    <table id="example1" class="table table-bordered table-hover table-striped">
                         <thead>
                             <tr>
                                 <th>No</th> <!-- column 1 -->
@@ -48,16 +48,30 @@
                                 <td>{{$kanken->noengine}}</td>
                                 <td>{{$kanken->shift}}</td>
                                 <td>{{$kanken->tanggal}}</td>
-                                <td>Edit / delete button</td>
-                            </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
+                                <td>
+                                    <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('kansa-kensa.destroy', $kanken->id) }}" method="POST">
+                                        <a href="/kansa-kensa/edit/{{$kanken->id}}" class="btn btn-sm btn-primary">EDIT</a>
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-sm btn-danger">HAPUS</button>
+                                    </form>
+                                </td>
                 </div>
-                <!-- /.card-body -->
             </div>
+            
         </div>
+        
     </div>
+    
+    </tr>
+    @endforeach
+    </tbody>
+    </table>
+</div>
+<!-- /.card-body -->
+</div>
+</div>
+</div>
 </div>
 <!-- /.container-fluid -->
 @endsection
@@ -79,8 +93,8 @@
         $("#example1").DataTable({
             "responsive": true,
             "lengthChange": false,
-            "autoWidth": false,
-            "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+            "autoWidth": false
+            // "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
         }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
         $('#example2').DataTable({
             "paging": true,

@@ -20,8 +20,30 @@ class KankenController extends Controller
     public function index()
     {
         $kankens = Kanken::all();
-        return view(('/test-room/kansa-kensa/index'), compact('kankens'));
+        return view(('kansa-kensa.index'), compact('kankens'));
     }
+
+    public function edit($id)
+    {
+        $kankens = Kanken::findOrFail($id);
+        // $kankens = Kanken::all();
+        // dd($kankens);
+        return view('/test-room/kansa-kensa/edit', compact('kankens'));
+    }
+    
+    public function update(Request $request, Kanken $kanken)
+    {
+        // $kankens = Kanken::all();
+        $kanken->update($request->all());
+        // dd($kanken);
+        
+        // if (save())
+        return redirect()->route('kankenindex')->with('success', 'Data Berhasil di Input');
+        // else
+        //     return "gagal";
+        // return view(('/test-room/kansa-kensa/edit'), compact('kankens'));
+    }
+
 
     public function store(Request $request)
     {
@@ -473,7 +495,6 @@ class KankenController extends Controller
         $model->act199 = $request->act199;
         $model->act200 = $request->act200;
         $model->act201 = $request->act201;
-
         if ($model->save())
             return redirect()->route('kankenindex')->with('success', 'Data Berhasil di Input');
         else

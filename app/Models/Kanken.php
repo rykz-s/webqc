@@ -14,5 +14,6 @@ class Kanken extends Model
     //     'timestamps'
     // ];
 
-    protected $table = "kankens";
+    protected $guarded = [];
+    protected $table = 'kankens';
 }

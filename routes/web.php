@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\KankenController;
+use App\Http\Controllers\PatrolController;
 use App\Models\Kanken;
 use Illuminate\Support\Facades\Route;
 
@@ -15,9 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::get('/home', function () {
     return view('home');
@@ -27,6 +27,11 @@ Route::get('/test-room', function () {
     return view('/test-room/index');
 });
 
-Route::get('/test-room/kansa-kensa', [KankenController::class, 'index'])->name('kankenindex');
-Route::get('/test-room/kansa-kensa/create', [KankenController::class, 'create']);
-Route::post('/test-room/kansa-kensa/create', [KankenController::class, 'store']);
+// Route::get('/', [KankenController::class, 'index'])->name('kankenindex');
+// Route::get('/create', [KankenController::class, 'create']);
+Route::get('/kansa-kensa/edit/{id}', [PatrolController::class, 'edit']);
+
+Route::put('/kansa-kensa/edit/{id}', [PatrolController::class, 'update']);
+// Route::post('/create', [KankenController::class, 'store']);
+
+Route::resource('kansa-kensa', PatrolController::class);
